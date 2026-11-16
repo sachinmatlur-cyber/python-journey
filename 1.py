@@ -1,12 +1,30 @@
-name='carol'
-age =3000
-name='carol'
-age =3000
-if name =='Alice':
-  print ('Hi, Alice.')
-elif age < 12:
-    print ('You are not Alice, kiddo.')
-elif age > 2000:
-    print ('Unlike you, Alice is not an undead, immortal vampire.')
-elif age > 100:
-      print ('You are not Alice, grannie.')
+class Student:
+ def __init__(self, name, usn):
+  self.name = name
+  self.usn = usn
+  self.marks = []
+  self.total = 0
+
+ # The code within getMarks needs to be indented
+ def getMarks(self):
+  for i in range(3):
+   marks = float(input(f"Enter marks for subject {i+1}: "))
+   self.marks.append(marks)
+   self.total += marks
+
+ # The code within display needs to be indented
+ def display(self):
+  print("Name:", self.name)
+  print("USN:", self.usn)
+  print("Marks:")
+  for i in range(3):
+   print(f"\tSubject {i+1}: {self.marks[i]}")
+  print("Total:", self.total)
+  print("Percentage:", round((self.total / 3),2))
+
+# Main program
+name = input("Enter name: ")
+usn = input("Enter USN: ")
+student = Student(name, usn)
+student.getMarks()
+student.display()
